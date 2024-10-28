@@ -122,9 +122,9 @@ class Collector:
 
     # 00000550 00000034 T main	/Users/behrens/Documents/projects/pebble/puncover/puncover/build/../src/puncover.c:25
     if os.name == 'nt':
-        parse_size_line_re = re.compile(r"^([\da-f]{8})\s+([\da-f]{8})\s+(.)\s+(\w+)(\s+([a-zA-Z]:.+)):(\d+)?")
+        parse_size_line_re = re.compile(r"^([\da-f]{8,16})\s+([\da-f]{8,16})\s+(.)\s+(\w+)(\s+([a-zA-Z]:.+)):(\d+)?")
     else:
-        parse_size_line_re = re.compile(r"^([\da-f]{8})\s+([\da-f]{8})\s+(.)\s+(\w+)(\s+([^:]+):(\d+))?")
+        parse_size_line_re = re.compile(r"^([\da-f]{8,16})\s+([\da-f]{8,16})\s+(.)\s+(\w+)(\s+([^:]+):(\d+))?")
 
 
     def parse_size_line(self, line):
